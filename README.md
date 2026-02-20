@@ -1,6 +1,6 @@
 # DevShell
 
-A personal, customized Bash environment for Windows — built on top of Git Bash (MSYS2) with a custom prompt, aliases, and a scripts folder for your own commands.
+A personal, customized Bash environment for Windows, built on top of Git Bash (MSYS2) with a custom prompt, aliases, and a scripts folder for your own commands.
 
 ## Structure
 
