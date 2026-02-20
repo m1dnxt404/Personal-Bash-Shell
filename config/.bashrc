@@ -31,6 +31,38 @@ _git_branch() {
 # Format: DevShell ~/some/path (branch) $
 PS1="${_C_GREEN}DevShell${_C_RESET} ${_C_BLUE}\w${_C_RESET}${_C_YELLOW}\$(_git_branch)${_C_RESET} \$ "
 
+# ── Color support ─────────────────────────────────────────────
+# Ensure 256-color terminal is declared (enables richer colors in
+# vim, less, git diff, and any tool that checks $TERM).
+export TERM="${TERM:-xterm-256color}"
+
+# Set LS_COLORS so ls distinguishes dirs, executables, archives, etc.
+if command -v dircolors &>/dev/null; then
+    eval "$(dircolors -b)"
+fi
+
+# Grep: highlight matches in bold yellow; color filenames / line numbers.
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+export GREP_COLORS='ms=01;33:mc=01;33:fn=01;35:ln=32:bn=32:se=36'
+
+# Diff: colored +/- lines (requires GNU diff ≥ 3.4, available in Git Bash).
+alias diff="diff --color=auto"
+
+# Git: force colored output even when piped.
+export GIT_TERMINAL_PROMPT=1
+git config --global color.ui auto 2>/dev/null
+git config --global color.diff.meta      "yellow bold"    2>/dev/null
+git config --global color.diff.frag      "cyan bold"      2>/dev/null
+git config --global color.diff.old       "red bold"       2>/dev/null
+git config --global color.diff.new       "green bold"     2>/dev/null
+git config --global color.status.added   "green bold"     2>/dev/null
+git config --global color.status.changed "yellow bold"    2>/dev/null
+git config --global color.status.untracked "red"          2>/dev/null
+git config --global color.branch.current "green bold"     2>/dev/null
+git config --global color.branch.remote  "red"            2>/dev/null
+
 # ── Aliases ───────────────────────────────────────────────────
 alias ls="ls --color=auto"
 alias ll="ls -la --color=auto"
