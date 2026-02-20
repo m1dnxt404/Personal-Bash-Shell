@@ -74,10 +74,7 @@ devshell-help() {
     echo ""
 }
 
-# ── Welcome banner ────────────────────────────────────────────
-echo ""
-echo "  ╔══════════════════════════════════╗"
-echo "  ║           DevShell               ║"
-echo "  ║   type 'devshell-help' for tips  ║"
-echo "  ╚══════════════════════════════════╝"
-echo ""
+# ── Welcome display ───────────────────────────────────────────
+# Shows system info on the left and Sung Jinwoo ASCII art on the right.
+# Run 'devfetch' anytime to display it again.
+devfetch
