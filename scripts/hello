@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Example custom DevShell command.
+# Place scripts here (no .sh extension needed) to use them as commands.
+
+echo "Hello from DevShell! 👋"
+echo "Add your own scripts to the scripts/ folder."
