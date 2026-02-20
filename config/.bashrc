@@ -29,7 +29,7 @@ _git_branch() {
 
 # ── Prompt ────────────────────────────────────────────────────
 # Format: DevShell ~/some/path (branch) $
-PS1="${_C_GREEN}DevShell${_C_RESET} ${_C_BLUE}\w${_C_RESET}${_C_YELLOW}\$(_git_branch)${_C_RESET} \$ "
+PS1="\n\n${_C_GREEN}DevShell${_C_RESET} ${_C_BLUE}\w${_C_RESET}${_C_YELLOW}\$(_git_branch)${_C_RESET} \$ "
 
 # ── Color support ─────────────────────────────────────────────
 # Ensure 256-color terminal is declared (enables richer colors in

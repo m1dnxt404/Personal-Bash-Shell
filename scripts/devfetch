@@ -122,3 +122,4 @@ for (( i=0; i<max; i++ )); do
     sleep 0.04
 done
 echo ""
+echo ""
